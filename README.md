@@ -1,7 +1,11 @@
-# dialog
+# ccdialog
 只需引入一个js，即可实现漂亮的html弹窗，一键蒙版
 
-![dialog](http://public.xiaomy.net/js/demo.png)
+*无蒙版*
+![ccdialog无蒙版](http://public.xiaomy.net/js/demo.png)
+*有蒙版*
+![ccdialog有蒙版](http://public.xiaomy.net/js/demo1.png)
+
 
 效果展示
 http://public.xiaomy.net/js/
