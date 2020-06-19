@@ -163,7 +163,38 @@ Dialog.prototype={
             
             bt.style.background='linear-gradient(141deg,#40E0D0 0%,#00FFFF 51%,#40E0D0 75%)'
         };
-        
+        this.enter(bg)
         this.$body.appendChild(bg);
+
+    },
+    enter(el, done) { // 设置动画帧数
+        // js创建@keyframes，ball从定位在(10,10)的位置运动到(100,100) 的位置
+        const runkeyframes =`@keyframes ball-run{
+            0%{
+                top: 10px;
+            }
+            60%{
+                top: `+(parseInt(el.style.top.replace("px",""))+50)+`px;
+            }
+            100%{
+                top: `+el.style.top+`;
+            }
+        }`
+
+        console.log(el.style.top)
+        console.log(el.style.top.replace("px","")+100)
+        // 创建style标签
+        const style = document.createElement('style');
+        // 设置style属性
+        style.type = 'text/css';
+        // 将 keyframes样式写入style内
+        style.innerHTML = runkeyframes;
+        // 将style样式存放到head标签
+        document.getElementsByTagName('head')[0].appendChild(style);
+        el.style.animation='ball-run 1s 1';
+        // el.style.width='20px'
     }
 }
+
+
+
